@@ -1,4 +1,5 @@
 [tools]
+pre-commit = "latest"
 python = "3.13"
 uv = "latest"
 
@@ -10,3 +11,6 @@ experimental = true
 [env]
 APP_REPO = 'devops-study-app-matt'
 GITOPS_REPO = 'study-app-gitops'
+
+[hooks]
+enter = "bash ./scripts/setup_project"
