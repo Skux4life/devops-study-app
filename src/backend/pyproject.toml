@@ -1,0 +1,22 @@
+[project]
+name = "study-trackerbackend"
+version = "0.0.0"
+description = "Backend API for tracking study time related to DevOps."
+readme = "README.md"
+authors = [{ name = "Skux4life", email = "skux@gmail.com" }]
+requires-python = ">=3.13"
+dependencies = [
+    "fastapi>=0.162.2",
+    "httpx>=0.28.1",
+    "uvicorn>=0.54.0",
+]
+
+[project.scripts]
+study-tracker-api = "backend.main:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/backend"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
