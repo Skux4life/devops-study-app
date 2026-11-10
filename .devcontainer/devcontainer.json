@@ -3,8 +3,14 @@
     "context": "..",
     "dockerfile": "Dockerfile"
   },
+  "mounts": [
+    "source=${localEnv:XDG_RUNTIME_DIR}/podman/podman.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "containerEnv": {
+    "DOCKER_HOST": "unix:///var/run/docker.sock"
+  },
   "runArgs": [
-    "--device=/dev/fuse"
+    "--security-opt=label=disable"
   ],
   "postCreateCommand": "scripts/setup",
   "forwardPorts": [
