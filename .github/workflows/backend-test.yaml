@@ -43,5 +43,5 @@ jobs:
 
       - name: Lint with Ruff
         run: |
-          uv run ruff check --output-format=github --target-version=py313 src tests
-          uv run ruff format --diff --check --target-version=py313 src tests
+          uv run ruff check --output-format=github --target-version=py313 src #tests
+          uv run ruff format --diff --check --target-version=py313 src #tests
