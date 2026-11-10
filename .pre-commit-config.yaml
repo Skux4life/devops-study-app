@@ -4,3 +4,10 @@ repos:
     hooks:
       - id: commitizen
         stages: [commit-msg]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.4
+    hooks:
+      # linter
+      - id: ruff
+      # formatter
+      - id: ruff-format
