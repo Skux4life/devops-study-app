@@ -15,7 +15,7 @@ COPY . /app
 
 # Sync the project and install in, now that we have access to the source code
 RUN --mount=type=cache,target=/root/.cache/uv \
-  uv sync --locked --no-editable # --no-dev
+  uv sync --locked --no-editable --no-dev
 
 FROM python:3.13-alpine
 
