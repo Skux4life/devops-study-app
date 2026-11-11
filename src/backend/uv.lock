@@ -452,7 +452,7 @@ wheels = [
 ]
 
 [[package]]
-name = "study-trackerbackend"
+name = "study-tracker-backend"
 version = "0.0.0"
 source = { editable = "." }
 dependencies = [
