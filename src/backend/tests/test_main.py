@@ -252,3 +252,4 @@ def test_main_function(monkeypatch):
 
 
 # This is a very important comment
+# This is a very important comment
