@@ -204,3 +204,6 @@ def test_health_endpoint_api_down(client):
     data = response.json
     assert data["status"] == "unhealthy"
     assert data["api_connectivity"] is False
+
+
+# This is an important comment
