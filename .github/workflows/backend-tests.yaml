@@ -73,3 +73,16 @@ jobs:
           header: test-coverage
           recreate: true
           path: code-coverage-results.md
+
+      - name: Build container image
+        run: docker build -t backend .
+
+      - name: Run Trivy scan
+        uses: aquasecurity/trivy-action@v0.36.0
+        with:
+          image-ref: "backend"
+          format: "table"
+          exit-code: "0" # don't fail workflow for now
+          ignore-unfixed: true
+          vuln-type: "os,library"
+          severity: "CRITICAL,HIGH"
