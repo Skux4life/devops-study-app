@@ -1,0 +1,18 @@
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+metadata:
+  name: study-app-cluster
+servers: 1
+agents: 1
+options:
+  k3s:
+    extraArgs:
+      - arg: --disable=traefik
+        nodeFilters:
+          - server:*
+      - arg: --kubelet-arg=feature-gates=KubeletInUserNamespace=true
+        nodeFilters: [all]
+      - arg: --kube-proxy-arg=conntrack-max-per-core=0
+        nodeFilters: [all]
+      - arg: --kube-proxy-arg=conntrack-tcp-timeout-close-wait=0s
+        nodeFilters: [all]
