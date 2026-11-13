@@ -3,14 +3,13 @@
     "context": "..",
     "dockerfile": "Dockerfile"
   },
-  "mounts": [
-    "source=${localEnv:XDG_RUNTIME_DIR}/podman/podman.sock,target=/var/run/docker.sock,type=bind"
-  ],
-  "containerEnv": {
-    "DOCKER_HOST": "unix:///var/run/docker.sock"
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {}
   },
   "runArgs": [
-    "--security-opt=label=disable"
+    "--security-opt=label=disable",
+    "--privileged",
+    "--device=/dev/fuse"
   ],
   "postCreateCommand": "scripts/setup",
   "forwardPorts": [
